@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+<title>Weather</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    function gettingJSON(){
+        document.write("jquery loaded");
+        $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=London&APPID=ee6596241130f193adf1ba90e625cc10",function(json){
+            document.write(JSON.stringify(json));
+        });
+    }
+    </script>
 </head>
 <body>
-    
+<button id = "getIt" onclick = "gettingJSON()">Get JSON</button>
 </body>
 </html>
